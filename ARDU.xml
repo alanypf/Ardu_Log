@@ -1,0 +1,614 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+ <tabbed_widget parent="main_window" name="Main Window">
+
+  <!-- ===== Tab 1: RC Inputs ===== -->
+  <Tab containers="1" tab_name="AETR">
+   <Container>
+    <DockSplitter count="4" sizes="0.25;0.25;0.25;0.25" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-4619.464286" left="0.011626" top="398.035728" right="714.771462"/>
+       <limitY/>
+       <curve color="#1ac938" name="/AETR/Ail"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-470.717849" left="0.011626" top="439.529708" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/AETR/Elev"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-2.500000" left="0.011626" top="102.500000" right="714.771462"/>
+       <limitY/>
+       <curve color="#f14cc1" name="/AETR/Thr"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-4725.000000" left="0.011626" top="4725.000000" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/AETR/Rudd"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 2: Attitude (Desired vs Actual) ===== -->
+  <Tab containers="1" tab_name="ATT">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-45.0" left="0.011626" top="45.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/ATT/DesRoll"/>
+       <curve color="#1ac938" name="/ATT/Roll"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-45.0" left="0.011626" top="45.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#17becf" name="/ATT/DesPitch"/>
+       <curve color="#d62728" name="/ATT/Pitch"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-10.0" left="0.011626" top="370.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/ATT/DesYaw"/>
+       <curve color="#ff7f0e" name="/ATT/Yaw"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 3: PID Roll Rate ===== -->
+  <Tab containers="1" tab_name="PID_Roll">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-200.0" left="0.011626" top="200.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/PIDR/Tar"/>
+       <curve color="#1f77b4" name="/PIDR/Act"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/PIDR/P"/>
+       <curve color="#1ac938" name="/PIDR/I"/>
+       <curve color="#d62728" name="/PIDR/D"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/PIDR/FF"/>
+       <curve color="#ff7f0e" name="/PIDR/Err"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 4: PID Pitch Rate ===== -->
+  <Tab containers="1" tab_name="PID_Pitch">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-200.0" left="0.011626" top="200.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/PIDP/Tar"/>
+       <curve color="#1f77b4" name="/PIDP/Act"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/PIDP/P"/>
+       <curve color="#1ac938" name="/PIDP/I"/>
+       <curve color="#d62728" name="/PIDP/D"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/PIDP/FF"/>
+       <curve color="#ff7f0e" name="/PIDP/Err"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 5: PID Yaw Rate ===== -->
+  <Tab containers="1" tab_name="PID_Yaw">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-200.0" left="0.011626" top="200.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/PIDY/Tar"/>
+       <curve color="#1f77b4" name="/PIDY/Act"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/PIDY/P"/>
+       <curve color="#1ac938" name="/PIDY/I"/>
+       <curve color="#d62728" name="/PIDY/D"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/PIDY/FF"/>
+       <curve color="#ff7f0e" name="/PIDY/Err"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 6: Altitude Control ===== -->
+  <Tab containers="1" tab_name="Altitude">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-5.0" left="0.011626" top="120.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/CTUN/DAlt"/>
+       <curve color="#1f77b4" name="/CTUN/Alt"/>
+       <curve color="#1ac938" name="/CTUN/BAlt"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-5.0" left="0.011626" top="5.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/CTUN/DCRt"/>
+       <curve color="#d62728" name="/CTUN/CRt"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.05" left="0.011626" top="1.05" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/CTUN/ThI"/>
+       <curve color="#d62728" name="/CTUN/ThO"/>
+       <curve color="#9467bd" name="/CTUN/ThH"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 7: Position Controller - Down (Vertical) ===== -->
+  <Tab containers="1" tab_name="D">
+   <Container>
+    <DockSplitter count="3" sizes="0.333159;0.333681;0.333159" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-11.649416" left="0.011626" top="12.099301" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/PSCD/AD"/>
+       <curve color="#f14cc1" name="/PSCD/DAD"/>
+       <curve color="#bcbd22" name="/PSCD/TAD"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-4.312060" left="0.011626" top="4.756170" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/PSCD/PD"/>
+       <curve color="#1ac938" name="/PSCD/TPD"/>
+       <curve color="#ff7f0e" name="/PSCD/DPD"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-2.314762" left="0.011626" top="2.437889" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/PSCD/VD"/>
+       <curve color="#17becf" name="/PSCD/TVD"/>
+       <curve color="#1f77b4" name="/PSCD/DVD"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 8: Position Controller - East ===== -->
+  <Tab containers="1" tab_name="E">
+   <Container>
+    <DockSplitter count="3" sizes="0.333159;0.333681;0.333159" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.806374" left="0.011626" top="1.804669" right="714.771462"/>
+       <limitY/>
+       <curve color="#f14cc1" name="/PSCE/AE"/>
+       <curve color="#9467bd" name="/PSCE/DAE"/>
+       <curve color="#17becf" name="/PSCE/TAE"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.951362" left="0.011626" top="-0.265173" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/PSCE/PE"/>
+       <curve color="#bcbd22" name="/PSCE/DPE"/>
+       <curve color="#d62728" name="/PSCE/TPE"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.943527" left="0.011626" top="0.114381" right="714.771462"/>
+       <limitY/>
+       <curve color="#1ac938" name="/PSCE/VE"/>
+       <curve color="#1f77b4" name="/PSCE/DVE"/>
+       <curve color="#d62728" name="/PSCE/TVE"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 9: Position Controller - North ===== -->
+  <Tab containers="1" tab_name="N">
+   <Container>
+    <DockSplitter count="3" sizes="0.333159;0.333681;0.333159" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.320520" left="0.011626" top="0.202679" right="714.771462"/>
+       <limitY/>
+       <curve color="#1ac938" name="/PSCN/AN"/>
+       <curve color="#ff7f0e" name="/PSCN/DAN"/>
+       <curve color="#f14cc1" name="/PSCN/TAN"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-1.425659" left="0.011626" top="-0.119472" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/PSCN/PN"/>
+       <curve color="#17becf" name="/PSCN/DPN"/>
+       <curve color="#bcbd22" name="/PSCN/TPN"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.151417" left="0.011626" top="0.057880" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/PSCN/VN"/>
+       <curve color="#d62728" name="/PSCN/TVN"/>
+       <curve color="#1ac938" name="/PSCN/DVN"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 10: GPS Status & Quality ===== -->
+  <Tab containers="1" tab_name="GPS">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="30.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/GPS/NSats"/>
+       <curve color="#d62728" name="/GPS/HDop"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="200.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1ac938" name="/GPS/Alt"/>
+       <curve color="#ff7f0e" name="/GPS/Spd"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-5.0" left="0.011626" top="5.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/GPS/VZ"/>
+       <curve color="#17becf" name="/GPS/GCrs"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 11: Battery & Power ===== -->
+  <Tab containers="1" tab_name="Battery">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="60.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/BAT/Volt"/>
+       <curve color="#17becf" name="/BAT/VoltR"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="200.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/BAT/Curr"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="5000.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/BAT/CurrTot"/>
+       <curve color="#9467bd" name="/BAT/EnrgTot"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 12: IMU 0 Accelerometers ===== -->
+  <Tab containers="1" tab_name="IMU0">
+   <Container>
+    <DockSplitter count="3" sizes="0.333681;0.332637;0.333681" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.320233" left="0.011626" top="0.111221" right="714.771462"/>
+       <limitY/>
+       <curve color="#f14cc1" name="/IMU/#0/AccX"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.742650" left="0.011626" top="0.646022" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/IMU/#0/AccY"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-10.594993" left="0.011626" top="-9.309124" right="714.771462"/>
+       <limitY/>
+       <curve color="#17becf" name="/IMU/#0/AccZ"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 13: IMU 1 Accelerometers ===== -->
+  <Tab containers="1" tab_name="IMU1">
+   <Container>
+    <DockSplitter count="3" sizes="0.333681;0.332637;0.333681" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.254532" left="0.011626" top="0.166577" right="714.771462"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/IMU/#1/AccX"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.807353" left="0.011626" top="0.662569" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/IMU/#1/AccY"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-10.577794" left="0.011626" top="-9.278079" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/IMU/#1/AccZ"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 14: Gyroscopes (IMU 0 & 1 overlaid) ===== -->
+  <Tab containers="1" tab_name="Gyro">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-3.0" left="0.011626" top="3.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/IMU/#0/GyrX"/>
+       <curve color="#17becf" name="/IMU/#1/GyrX"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-3.0" left="0.011626" top="3.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/IMU/#0/GyrY"/>
+       <curve color="#ff7f0e" name="/IMU/#1/GyrY"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-3.0" left="0.011626" top="3.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1ac938" name="/IMU/#0/GyrZ"/>
+       <curve color="#9467bd" name="/IMU/#1/GyrZ"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 15: Vibration Analysis ===== -->
+  <Tab containers="1" tab_name="Vibration">
+   <Container>
+    <DockSplitter count="2" sizes="0.5;0.5" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="60.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/VIBE/VibeX"/>
+       <curve color="#d62728" name="/VIBE/VibeY"/>
+       <curve color="#1ac938" name="/VIBE/VibeZ"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="100.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#ff7f0e" name="/VIBE/Clip0"/>
+       <curve color="#9467bd" name="/VIBE/Clip1"/>
+       <curve color="#17becf" name="/VIBE/Clip2"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 16: EKF Health ===== -->
+  <Tab containers="1" tab_name="EKF">
+   <Container>
+    <DockSplitter count="3" sizes="0.333333;0.333334;0.333333" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/XKF4/SV"/>
+       <curve color="#d62728" name="/XKF4/SP"/>
+       <curve color="#1ac938" name="/XKF4/SH"/>
+       <curve color="#ff7f0e" name="/XKF4/SM"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="0.0" left="0.011626" top="1.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#9467bd" name="/XKF4/SVT"/>
+       <curve color="#f14cc1" name="/XKF4/errRP"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-10.0" left="0.011626" top="10.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/XKF1/VN"/>
+       <curve color="#d62728" name="/XKF1/VE"/>
+       <curve color="#1ac938" name="/XKF1/VD"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 17: Motor Outputs (RCOU) ===== -->
+  <Tab containers="1" tab_name="Motors">
+   <Container>
+    <DockSplitter count="4" sizes="0.25;0.25;0.25;0.25" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="976.0" left="0.011626" top="2000.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/RCOU/C1"/>
+       <curve color="#17becf" name="/RCOU/C2"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="976.0" left="0.011626" top="2000.0" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/RCOU/C3"/>
+       <curve color="#ff7f0e" name="/RCOU/C4"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="976.425000" left="0.011626" top="1966.575000" right="714.771462"/>
+       <limitY/>
+       <curve color="#bcbd22" name="/RCOU/C9"/>
+       <curve color="#1f77b4" name="/RCOU/C10"/>
+      </plot>
+     </DockArea>
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="976.275000" left="0.011626" top="1972.725000" right="714.771462"/>
+       <limitY/>
+       <curve color="#d62728" name="/RCOU/C11"/>
+       <curve color="#1ac938" name="/RCOU/C12"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <!-- ===== Tab 18: Flight Mode ===== -->
+  <Tab containers="1" tab_name="MODE">
+   <Container>
+    <DockSplitter count="1" sizes="1" orientation="-">
+     <DockArea name="...">
+      <plot flip_y="false" flip_x="false" style="Lines" mode="TimeSeries">
+       <range bottom="-0.475000" left="0.011626" top="19.475000" right="714.771462"/>
+       <limitY/>
+       <curve color="#1f77b4" name="/MODE/ModeNum"/>
+      </plot>
+     </DockArea>
+    </DockSplitter>
+   </Container>
+  </Tab>
+
+  <currentTabIndex index="0"/>
+ </tabbed_widget>
+ <use_relative_time_offset enabled="1"/>
+ <!-- - - - - - - - - - - - - - - -->
+ <!-- - - - - - - - - - - - - - - -->
+ <Plugins>
+  <plugin ID="ArduPilot Bin"/>
+  <plugin ID="DataLoad CSV">
+   <parameters delimiter="0" time_axis=""/>
+  </plugin>
+  <plugin ID="DataLoad MCAP"/>
+  <plugin ID="DataLoad Parquet">
+   <default prevTimestamp="" dateFromat="yyyy-MM-dd hh:mm:ss" parseDateTime="0" radioIndexChecked="0"/>
+  </plugin>
+  <plugin ID="DataLoad ULog"/>
+  <plugin ID="MQTT Subscriber (Mosquitto)"/>
+  <plugin ID="UDP Server"/>
+  <plugin ID="ZMQ Subscriber"/>
+  <plugin ID="Fast Fourier Transform"/>
+  <plugin ID="Quaternion to RPY"/>
+  <plugin ID="Reactive Script Editor">
+   <library code="--[[ Helper function to create a ScatterXY series from arrays.&#xa;&#xa; series_name: name of the created ScatterXY series&#xa; prefix:      prefix of the timeseries, before the index of the array&#xa; suffix_X:   suffix to complete the name of the series containing the X value.&#xa;             if [nil], the index of the array will be used.&#xa; suffix_Y:   suffix to complete the name of the series containing the Y value&#xa; timestamp:   usually the tracker_time variable&#xa;              &#xa; Example:&#xa; &#xa; Assuming we have multiple series in the form:&#xa; &#xa;   /trajectory/node.{N}/position/x&#xa;   /trajectory/node.{N}/position/y&#xa;   &#xa; where {N} is the index of the array (integer). We can create a reactive series from the array with:&#xa; &#xa;   CreateSeriesFromArray( &quot;my_trajectory&quot;, &quot;/trajectory/node&quot;,  &quot;position/x&quot;, &quot;position/y&quot;, tracker_time );&#xa;]]--&#xa;&#xa;function CreateSeriesFromArray( series_name, prefix, suffix_X, suffix_Y, timestamp )&#xa;  --- create a new series or overwite the previous one&#xa;  new_series = MutableScatterXY.new(series_name)&#xa;  &#xa;  --- Append points to new_series&#xa;  index = 0&#xa;  while(true) do&#xa;&#xa;    x = index;&#xa;    -- if not nil, get the X coordinate from a series&#xa;    if suffix_X ~= nil then &#xa;      series_x = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_X) )&#xa;      if series_x == nil then break end&#xa;      x = series_x:atTime(timestamp)&#x9; &#xa;    end&#xa;    &#xa;    series_y = TimeseriesView.find( string.format( &quot;%s.%d/%s&quot;, prefix, index, suffix_Y) )&#xa;    if series_x == nil then break end &#xa;    y = series_y:atTime(timestamp)&#xa;    &#xa;    new_series:push_back(x,y)&#xa;    index = index+1&#xa;  end&#xa;end&#xa;"/>
+   <scripts/>
+  </plugin>
+  <plugin ID="CSV Exporter"/>
+ </Plugins>
+ <!-- - - - - - - - - - - - - - - -->
+ <previouslyLoaded_Datafiles>
+  <fileInfo filename="../APM/LOGS/00000021.BIN" prefix=""/>
+ </previouslyLoaded_Datafiles>
+ <!-- - - - - - - - - - - - - - - -->
+ <customMathEquations/>
+ <snippets/>
+ <!-- - - - - - - - - - - - - - - -->
+</root>
