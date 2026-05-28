@@ -1,0 +1,18 @@
+# Flight logs and chopped output
+*.bin
+*.BIN
+*.csv
+*.CSV
+*.parm
+*.PARM
+messages.txt
+
+# Chopped log output directories
+second/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
