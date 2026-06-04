@@ -33,6 +33,10 @@ DOWNSAMPLE_TYPES = {
 # Format/parameter messages — keep them, but as text sidecars rather than per-row CSV
 SIDECAR_TYPES = {'FMT', 'FMTU', 'UNIT', 'MULT', 'PARM', 'MSG', 'CMD'}
 
+# Firmware file-transfer dumps (raw binary Data field) — never flight data, and the
+# binary content breaks csv.writer. Always skip, even at tier 3.
+SKIP_TYPES = {'FILE'}
+
 # Secondary/redundant sensor copies and the legacy EKF2 stack.
 # Skipped by default; pass --all-sensors to keep them.
 REDUNDANT_TYPES = {
@@ -73,9 +77,11 @@ PSC_GROUP    = {'PSCN': 'N', 'PSCE': 'E', 'PSCD': 'D'}
 def _format_value(v):
     if isinstance(v, bytes):
         try:
-            return v.decode('utf-8', errors='replace').rstrip('\x00')
+            s = v.decode('utf-8', errors='replace')
         except Exception:
             return v.hex()
+        # Drop control chars (NUL, \r, \n, ...) that would break csv.writer.
+        return ''.join(ch for ch in s if ord(ch) >= 32 or ch == '\t').strip()
     return v
 
 
@@ -150,6 +156,8 @@ def chop_log(input_file, output_dir, start_time, end_time, downsample_hz=50.0,
                 continue
             if msg_type in SIDECAR_TYPES:
                 # FMT/FMTU/UNIT/MULT/CMD: structural metadata, not flight data — skip
+                continue
+            if msg_type in SKIP_TYPES:
                 continue
             if not all_sensors and msg_type in REDUNDANT_TYPES:
                 continue
